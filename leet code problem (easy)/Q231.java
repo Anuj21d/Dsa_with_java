@@ -20,4 +20,11 @@ public class Q231 {
     }
         System.out.println("true");
     }
+    // for(int i = 0;i <= 30; i++){
+    //         int ans = (int)Math.pow(2,i);
+    //         if(ans == n){
+    //             return true;
+    //         }
+    //     }
+    //     return false;
 }

@@ -10,28 +10,27 @@ public class dTobfor {
         int original = n;          // ✅ save original
         n = Math.abs(n);
 
-        int ans = 0;
-        for (int i = 0; n != 0; i++) {
+        
+        int i = 0, binary = 0;
+        while (n!=0){
             int bit = n & 1;
-            ans = ans + bit * (int) Math.pow(10, i);
-            n = n >> 1;
+            
+            binary = binary | (bit << i);
+            i++;
+            n = n>> 1;
         }
+        binary = binary | (0 << i);
+        System.out.println("Binary: " + Integer.toBinaryString(binary));
+        int ones = ~binary;
+        System.out.println("Ones: " + Integer.toBinaryString(ones));
+        int twos = ones +1;
+        System.out.println("Twos: " + Integer.toBinaryString(twos));
 
-        // 1's complement (digit-wise)
-        int ones = 0;
-        int place = 1;
-        int temp = ans;
-        while (temp != 0) {
-            int digit = temp % 10;
-            digit = (digit == 0) ? 1 : 0;
-            ones = ones + digit * place;
-            place *= 10;
-            temp /= 10;
-        }
-        String twos = (String)ones + 1;
 
-        System.out.println("Binary of " + original + " is " + ans);
-        System.out.println("Ones complement of " + original + " is " + ones);
-        System.out.println("Twos complement of " + original + " is " + twos);
+        // again converting negative in decimal to check correct value
+
+        int aones =  ~twos;
+        int atwos = aones + 1;
+        System.out.println("Again in decimal: " + atwos);
     }
 }

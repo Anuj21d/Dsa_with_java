@@ -1,4 +1,4 @@
-public class minmax {
+public class sumofarray {
     public static void main(String[] args) {
         int[] arr = {5,10,20,30,5};
 
@@ -6,13 +6,10 @@ public class minmax {
         for(int i = 0;i<=arr.length-1;i++){
             System.out.print(arr[i]+" ");
         }
-        int max = 0;
+        int sum = 0;
         for(int i = 0;i<=arr.length-1;i++){
-            if(max < arr[i]){
-                max = arr[i];
-            }
+            sum += arr[i];
         }
-        System.out.print("max :"+ max);
-        
+        System.out.print("sum :"+ sum);
     }
 }
